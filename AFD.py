@@ -114,7 +114,7 @@ def plot_star(Teff, R, time, flux, n, plot_path, plot_file_name):
     time_endvalue = []
     for i, element in enumerate(time_start_index):
         import scipy.interpolate as interpolate
-        relative_flux = ((normalized_flux - flux_avg) / normalized_flux[time_start_index[i] - 1])  # relative flux normalized by the brightness just before the flare.
+        relative_flux = ((normalized_flux - flux_avg) / flux_avg)  
         Narr = relative_flux[max_flare_index[i] - 10:max_flare_index[i] + 30]  # part of the relative flux around the flare
         timeNarr = time[max_flare_index[i] - 10:max_flare_index[i] + 30]  # the time corresponding to Narr
         # First point is an average of five data points just before the flare, second point is an average of five data points after 5h of the peak
